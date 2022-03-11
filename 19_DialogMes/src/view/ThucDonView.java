@@ -91,4 +91,3 @@ public class ThucDonView extends JFrame {
 		this.jLabel_ThongTin.setText(kq);
 	}
 }
-
