@@ -64,7 +64,7 @@ public class MyNotepadView extends JFrame {
 		contentPane.add(panel, BorderLayout.SOUTH);
 		panel.setLayout(null);
 		
-		lblNewLabel = new JLabel("New label");
+		lblNewLabel = new JLabel("Hoaqhienn");
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		lblNewLabel.setBounds(10, 0, 314, 39);
 		panel.add(lblNewLabel);
