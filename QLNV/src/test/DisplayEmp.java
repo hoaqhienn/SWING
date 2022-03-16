@@ -184,8 +184,4 @@ public class DisplayEmp extends JFrame implements ActionListener, MouseListener 
 		new DisplayEmp().setVisible(true);
 	}
 	
-	public void loadData() throws Exception{
-		EmpList ds = null;
-		
-	}
 }
