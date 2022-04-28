@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<studentList>
+<student>
+		<rollNo>R001</rollNo>
+		<fullname>TRAN VAN A</fullname>
+		<address>HA NOI</address>
+		<gender>Male</gender>
+	</student><student>
+		<rollNo>R002</rollNo>
+		<fullname>TRAN VAN B</fullname>
+		<address>NAM DINH</address>
+		<gender>Male</gender>
+	</student><student>
+		<rollNo>R003</rollNo>
+		<fullname>TRAN VAN B</fullname>
+		<address>NAM DINH</address>
+		<gender>Male</gender>
+	</student><student>
+		<rollNo>R004</rollNo>
+		<fullname>TRAN VAN C</fullname>
+		<address>NAM DINH</address>
+		<gender>Male</gender>
+	</student><student>
+		<rollNo>R005</rollNo>
+		<fullname>TRAN VAN E</fullname>
+		<address>NAM DINH</address>
+		<gender>Male</gender>
+	</student><student>
+		<rollNo>R006</rollNo>
+		<fullname>Tran Van T</fullname>
+		<address>OKOK</address>
+		<gender>Male</gender>
+	</student><student>
+		<rollNo>0</rollNo>
+		<fullname>Hien</fullname>
+		<address>HCM</address>
+		<gender>Male</gender>
+	</student>
+</studentList>

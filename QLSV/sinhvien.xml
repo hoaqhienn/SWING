@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<dssinhvien>
+                                    	
+    
+    
+    
+    
+    
+    
+    
+    
+    <sinhvien id="123">
+                                                                        		
+        
+        
+        
+        
+        
+        
+        
+        
+        <hoten>Quách Thành Lợi</hoten>
+                                                                        		
+        
+        
+        
+        
+        
+        
+        
+        
+        <lop>DHKTPM13BTT</lop>
+                                                                        		
+        
+        
+        
+        
+        
+        
+        
+        
+        <noisinh>Đồng Nai</noisinh>
+                                                                        		
+        
+        
+        
+        
+        
+        
+        
+        
+        <monhoc>LT JAVA</monhoc>
+                                                                        	
+    
+    
+    
+    
+    
+    
+    
+    
+    </sinhvien>
+                                    	
+    
+    
+    
+    
+    
+    
+    
+    
+    <sinhvien id="363">
+                                                                        		
+        
+        
+        
+        
+        
+        
+        
+        
+        <hoten>Lê Thanh Hưng</hoten>
+                                                                        		
+        
+        
+        
+        
+        
+        
+        
+        
+        <lop>DHKTPM13A</lop>
+                                                                        		
+        
+        
+        
+        
+        
+        
+        
+        
+        <noisinh>Đồng Nai</noisinh>
+                                                                        		
+        
+        
+        
+        
+        
+        
+        
+        
+        <monhoc>LT JAVA</monhoc>
+                                                                        	
+    
+    
+    
+    
+    
+    
+    
+    
+    </sinhvien>
+                                    	
+    
+    
+    
+    
+    
+    
+    
+    
+    <sinhvien id="673">
+                                                                        		
+        
+        
+        
+        
+        
+        
+        
+        
+        <hoten>Phạm Long Minh</hoten>
+                                                                        		
+        
+        
+        
+        
+        
+        
+        
+        
+        <lop>DHKTPM13BTT</lop>
+                                                                        		
+        
+        
+        
+        
+        
+        
+        
+        
+        <noisinh>Tp.HCM</noisinh>
+                                                                        		
+        
+        
+        
+        
+        
+        
+        
+        
+        <monhoc>LT JAVA</monhoc>
+                                                                        	
+    
+    
+    
+    
+    
+    
+    
+    
+    </sinhvien>
+                                    	
+    
+    
+    
+    
+    
+    
+    
+    
+    <sinhvien id="363">
+                                                                        		
+        
+        
+        
+        
+        
+        
+        
+        
+        <hoten>Trần Tiến Đạt</hoten>
+                                                                        		
+        
+        
+        
+        
+        
+        
+        
+        
+        <lop>DHKTPM13BTT</lop>
+                                                                        		
+        
+        
+        
+        
+        
+        
+        
+        
+        <noisinh>Tây Ninh</noisinh>
+                                                                        		
+        
+        
+        
+        
+        
+        
+        
+        
+        <monhoc>LT C</monhoc>
+                                                                        	
+    
+    
+    
+    
+    
+    
+    
+    
+    </sinhvien>
+                                    	
+    
+    
+    
+    
+    
+                    
+    
+    
+    
+    
+
+    
+    
+    
+        
+    
+    
+    
+
+
+
+    
+    <sinhvien id="1">
+                
+        <hoten>Hiện</hoten>
+                
+        <lop>A</lop>
+                
+        <noisinh>TG</noisinh>
+                
+        <monhoc>HSK</monhoc>
+            
+    </sinhvien>
+    
+    <sinhvien id="2">
+        <hoten>Lê Hoàng Hiện</hoten>
+        <lop>DHKTPM16ATT</lop>
+        <noisinh>Tiền Giang</noisinh>
+        <monhoc>LT JAVA</monhoc>
+    </sinhvien>
+</dssinhvien>
