@@ -49,8 +49,6 @@ public class FrmNhanVien extends JFrame implements ActionListener {
 	}
 
 	private void buildUI() {
-
-		// Pháº§n North
 		JPanel pnlNorth;
 		add(pnlNorth = new JPanel(), BorderLayout.NORTH);
 		pnlNorth.setPreferredSize(new Dimension(0, 180));

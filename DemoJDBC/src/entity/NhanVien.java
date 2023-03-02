@@ -10,15 +10,15 @@ public class NhanVien {
 	
 	private PhongBan phong;
 
-	public NhanVien(String maNV, String hoNV, String tenNV, int tuoi, boolean phai, float luong, PhongBan phong) {
+	public NhanVien(String maNV, String hoNV, String tenNV, int tuoi, boolean phai, PhongBan phong, float luong) {
 		super();
 		this.maNV = maNV;
 		this.hoNV = hoNV;
 		this.tenNV = tenNV;
 		this.tuoi = tuoi;
 		Phai = phai;
-		this.luong = luong;
 		this.phong = phong;
+		this.luong = luong;
 	}
 
 	public String getMaNV() {

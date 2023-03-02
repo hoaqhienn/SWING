@@ -24,11 +24,11 @@ public class MyWindow extends JFrame{
 	}
 	
 	public static void main(String[] args) {
-		MyWindow m1 = new MyWindow();
-		m1.showIt();
-		
-		MyWindow m2 = new MyWindow();
-		m2.showIt("Window 2");
+//		MyWindow m1 = new MyWindow();
+//		m1.showIt();
+//		
+//		MyWindow m2 = new MyWindow();
+//		m2.showIt("Window 2");
 		
 		MyWindow m3 = new MyWindow();
 		m3.showIt("Window 3", 600, 400);

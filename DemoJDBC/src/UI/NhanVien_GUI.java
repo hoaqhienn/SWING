@@ -2,12 +2,13 @@ package UI;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-
 import java.awt.Font;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,9 +22,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-
 import javax.swing.JScrollPane;
-
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
@@ -33,6 +32,10 @@ import dao.NhanVien_DAO;
 import dao.PhongBan_DAO;
 import entity.NhanVien;
 import entity.PhongBan;
+
+// UI
+// import java.awt.*; / java.awt.event.*; / java.sql.SQLException; / java.util.*; / javax.swing.*; 
+// javax.swing.table.DefaultTableModel; / connectDB.*; / dao.*; / entity.*;
 
 public class NhanVien_GUI extends JFrame implements ActionListener, MouseListener {
 	
@@ -59,9 +62,7 @@ public class NhanVien_GUI extends JFrame implements ActionListener, MouseListene
 	private NhanVien_DAO nv_dao;
 	private PhongBan_DAO pb_dao;
 	
-
 	public NhanVien_GUI() {
-
 		// khởi tạo kết nối đến CSDL
 		try {
 			ConnectDB.getInstance().connect();
@@ -192,14 +193,16 @@ public class NhanVien_GUI extends JFrame implements ActionListener, MouseListene
 		Object o = e.getSource();
 		if (o.equals(bttThem)) {
 			String ma = txtMaNV.getText();
+//			validData();
 			String ho = txtHo.getText();
 			String ten = txtTen.getText();
-			int tuoi = Integer.parseInt(txtTuoi.getText());
+			int tuoi = Integer.parseInt(txtTuoi.getText()+"");
 			boolean phai = chkNu.isSelected();
-			float luong = (float) Double.parseDouble(txtTienLuong.getText());
 			String phongban = cboPhongBan.getSelectedItem().toString();
+			float luong = (float) Double.parseDouble(txtTienLuong.getText());
 			
-			NhanVien nv = new NhanVien(ma, ho, ten, tuoi, phai, luong, new PhongBan(phongban));
+			
+			NhanVien nv = new NhanVien(ma, ho, ten, tuoi, phai, new PhongBan(phongban), luong);
 			
 			try {
 				nv_dao.create(nv);
@@ -208,8 +211,9 @@ public class NhanVien_GUI extends JFrame implements ActionListener, MouseListene
 						nv.getHoNV(),
 						nv.getTenNV(),
 						nv.getTuoi(),
-						nv.isPhai(),
-						nv.getLuong()
+						nv.isPhai()?"Nam":"Nữ",
+						"$"+nv.getLuong(),
+						nv.getPhong().getMaPhongBan()
 				});
 			} catch (Exception e1) {
 				JOptionPane.showMessageDialog(this, "Trùng!");
@@ -218,7 +222,9 @@ public class NhanVien_GUI extends JFrame implements ActionListener, MouseListene
 		}
 		if (o.equals(bttXoa)) {
 			int r = tableNhanVien.getSelectedRow();
+			String text = (String)tableNhanVien.getValueAt(r, 1);
 			modelNhanVien.removeRow(r); //xóa trong table model
+			nv_dao.delete(text);
 
 		}
 		if (o.equals(bttXoaTrang)) {
@@ -236,8 +242,6 @@ public class NhanVien_GUI extends JFrame implements ActionListener, MouseListene
 		}
 
 	}
-
-	
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
@@ -275,4 +279,13 @@ public class NhanVien_GUI extends JFrame implements ActionListener, MouseListene
 		// TODO Auto-generated method stub
 
 	}
+	
+//	private boolean validData() {
+//		String ma = txtMaNV.getText().trim();
+//		if(!(!ma.equals("") && ma.matches("<???>"))){
+//			JOptionPane.showMessageDialog(this, "<???>");
+//			return false;
+//		}
+//		return true;
+//	}
 }

@@ -1,11 +1,10 @@
 package dao;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
+
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
 
 import connectDB.ConnectDB;
 import entity.NhanVien;
@@ -33,8 +32,7 @@ public class NhanVien_DAO {
 				boolean phai = rs.getBoolean(5);
 				PhongBan pBan = new PhongBan(rs.getString(6));
 				Float luong = rs.getFloat(7);
-				
-				NhanVien nv = new NhanVien(maNV, hoNV, tenNV, tuoi, phai, luong, pBan);
+				NhanVien nv = new NhanVien(maNV, hoNV, tenNV, tuoi, phai, pBan, luong);
 				dsnv.add(nv);
 			}
 			
@@ -43,6 +41,7 @@ public class NhanVien_DAO {
 		}
 		return dsnv;
 	}
+	
 	public ArrayList<NhanVien> getNhanVienTheoMaNV(int id) {
 		ArrayList<NhanVien> dsnv = new ArrayList<NhanVien>();
 		ConnectDB.getInstance();
@@ -59,9 +58,9 @@ public class NhanVien_DAO {
 				String tenNV = rs.getString(3);
 				int tuoi = rs.getInt(4);
 				boolean phai = rs.getBoolean(5);
-				float luong = rs.getFloat(6);
-				PhongBan pBan = new PhongBan(rs.getString(7));
-				NhanVien nv = new NhanVien(maNV, hoNV, tenNV, tuoi, phai, luong, pBan);
+				PhongBan pBan = new PhongBan(rs.getString(6));
+				float luong = rs.getFloat(7);
+				NhanVien nv = new NhanVien(maNV, hoNV, tenNV, tuoi, phai, pBan, luong);
 				dsnv.add(nv);
 			}
 		} catch (SQLException e) {
@@ -74,8 +73,8 @@ public class NhanVien_DAO {
 			}
 		}
 		return dsnv;
-		
 	}
+	
 	public ArrayList<NhanVien> getNhanVienTheoPhongBan(int idpb) {
 		ArrayList<NhanVien> dsnv = new ArrayList<NhanVien>();
 		ConnectDB.getInstance();
@@ -94,7 +93,7 @@ public class NhanVien_DAO {
 				boolean phai = rs.getBoolean(5);
 				float luong = rs.getFloat(6);
 				PhongBan pBan = new PhongBan(rs.getString(7));
-				NhanVien nv = new NhanVien(maNV, hoNV, tenNV, tuoi, phai, luong, pBan);
+				NhanVien nv = new NhanVien(maNV, hoNV, tenNV, tuoi, phai, pBan, luong);
 				dsnv.add(nv);
 			}
 		} catch (SQLException e) {
@@ -108,20 +107,21 @@ public class NhanVien_DAO {
 		}
 		return dsnv;
 	}
+	 
 	public boolean create(NhanVien nv) {
 		ConnectDB.getInstance();
 		Connection con = ConnectDB.getConnection();
 		PreparedStatement stmt = null;
 		int n = 0;
 		try {
-			stmt = con.prepareStatement("insert into" + "NhanVien value(?, ?, ?, ?, ?, ?, ?)");
+			stmt = con.prepareStatement("insert into NhanVien values(?, ?, ?, ?, ?, ?, ?)");
 			stmt.setString(1, nv.getMaNV());
 			stmt.setString(2, nv.getHoNV());
 			stmt.setString(3, nv.getTenNV());
 			stmt.setInt(4, nv.getTuoi());
 			stmt.setBoolean(5, nv.isPhai());
-			stmt.setString(6, nv.getPhong().getMaPhongBan());
 			stmt.setFloat(7, (float) nv.getLuong());
+			stmt.setString(6, nv.getPhong().getMaPhongBan()+"");
 			n = stmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -135,6 +135,29 @@ public class NhanVien_DAO {
 		}
 		return n > 0;
 	}
+	
+	//xoa 
+	public boolean delete(String text) {
+		ConnectDB.getInstance();
+		Connection con = ConnectDB.getConnection();
+		PreparedStatement stmt = null;
+		int n = 0;
+		try {
+			stmt = con.prepareStatement("DELETE FROM dbo.NhanVien where ho = '" + text + "';");
+			n = stmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				stmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return n > 0;	
+	}
+	
 	public boolean update(NhanVien nv) {
 		ConnectDB.getInstance();
 		Connection con = ConnectDB.getConnection();
