@@ -73,10 +73,6 @@ public class NhanVien {
 		return true;
 	}
 	
-	//Mỗi giá trị trong dòng ngăn cách bằng dấu ;
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
 	@Override
 	public String toString() {
 		return maNV + ";" + hoTen + ";"

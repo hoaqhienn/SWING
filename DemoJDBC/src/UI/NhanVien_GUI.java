@@ -1,4 +1,4 @@
-package UI;
+ package UI;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -140,7 +140,6 @@ public class NhanVien_GUI extends JFrame implements ActionListener, MouseListene
 		add(new JScrollPane(tableNhanVien), BorderLayout.CENTER);
 
 		// =================================
-		// doc du lieu tu database SQL vao Jtable
 		DocDuLieuDatabaseVaoTable();
 		// =================================
 

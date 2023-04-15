@@ -176,8 +176,7 @@ public class GUI extends JFrame implements ActionListener {
 			e.printStackTrace();
 		}
 		for (NhanVien nhanVien : danhSachNhanVien.getDanhSachNhanVien()) {
-			Object[] row = {nhanVien.getMaNV(), nhanVien.getHoNv(), nhanVien.getTenNV(),
-					nhanVien.getPhongBan(), nhanVien.getLuong()};
+			Object[] row = {nhanVien.getMaNV(), nhanVien.getHoNv(), nhanVien.getTenNV(), nhanVien.getPhongBan(), nhanVien.getLuong()};
 			model.addRow(row);
 		}
 	}
@@ -189,8 +188,7 @@ public class GUI extends JFrame implements ActionListener {
 		if (object.equals(xoaTrangButton)) {
 			XoaTrang();
 		} else if (object.equals(luuButton)) {
-			if (maTextField.getText().equals("") || hoTextField.getText().equals("")
-					|| tenTextField.getText().equals("") || luongTextField.getText().equals("")) {
+			if (maTextField.getText().equals("") || hoTextField.getText().equals("") || tenTextField.getText().equals("") || luongTextField.getText().equals("")) {
 				JOptionPane.showMessageDialog(this, "Không được phép lưu dữ liệu rỗng");
 			}
 			else {

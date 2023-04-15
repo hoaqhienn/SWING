@@ -57,7 +57,7 @@ public class ThucDonView extends JFrame {
 
 		JPanel jPanel_MonPhu = new JPanel();
 		jPanel_MonPhu.setLayout(new GridLayout(2, 2));
-		String[] cacMonPhu= new String[] {"TRÀ SỮA","COCACOLA","BÁNH NGỌT", "NEM"};
+		String[] cacMonPhu= new String[] {"TRÀ SỮA","COCACOLA","BÁNH NGỌT", "NEM", "CƠM SƯỜN TRỨNG", "BÚN CHẢ HÀ NỘI"};
 		jList_MonPhu = new JList<String>(cacMonPhu);
 		jList_MonPhu.setFont(font);
 		jPanel_MonPhu.add(jList_MonPhu);

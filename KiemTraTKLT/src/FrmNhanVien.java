@@ -20,8 +20,6 @@ import javax.swing.JTextField;
 
 import javax.swing.table.DefaultTableModel;
 
-
-
 public class FrmNhanVien extends JFrame implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
@@ -68,7 +66,6 @@ public class FrmNhanVien extends JFrame implements ActionListener {
 		pnlNorth.add(txtTuoi = new JTextField());
 		pnlNorth.add(txtEmail = new JTextField());
 		
-
 		int w1 = 100, w2 = 300, h = 20;
 		lblMaNV.setBounds(20, 20, w1, h);
 		txtMa.setBounds(120, 20, 200, h);
@@ -83,13 +80,11 @@ public class FrmNhanVien extends JFrame implements ActionListener {
 		lblEmail.setBounds(450, 70, w1, h);
 		txtEmail.setBounds(570, 70, w2, h);
 
-		// Pháº§n Center
 		JPanel pnlCenter;
 		add(pnlCenter = new JPanel(), BorderLayout.CENTER);
 		pnlCenter.add(btnThem = new JButton("Thêm kiểm tra dữ liệu..."));
 		pnlCenter.add(btnXoaRong = new JButton("Xoá rỗng"));
 
-		// Pháº§n South
 		JScrollPane scroll;
 		String[] headers = "MaNhanVien;HoTenNV;Tuoi;DiaChi; Email".split(";");
 
@@ -101,8 +96,7 @@ public class FrmNhanVien extends JFrame implements ActionListener {
 		scroll.setPreferredSize(new Dimension(0, 350));
 	
 		btnThem.addActionListener(this);		
-		btnXoaRong.addActionListener(this);
-		
+		btnXoaRong.addActionListener(this);		
 	}
 
 	@Override
@@ -110,8 +104,9 @@ public class FrmNhanVien extends JFrame implements ActionListener {
 		Object o = e.getSource();
 
 		if(o.equals(btnThem)){
-			validData();
-
+			if(validData()) {
+				JOptionPane.showMessageDialog(this, "Success!");
+			}
 		}
 		if(o.equals(btnXoaRong))
 			clearTextfields();
@@ -127,7 +122,12 @@ public class FrmNhanVien extends JFrame implements ActionListener {
 			JOptionPane.showMessageDialog(this, "Mã nhân viên theo mẫu: NV\\d{8}");
 			return false;
 		}
-
+		
+		if(!(!ten.equals("") && ten.matches("[a-zA-Z' ]+"))){
+		JOptionPane.showMessageDialog(this, "Tên nhân viên theo mẫu: [a-zA-Z' ]+");
+		return false;
+		}
+		
 		if(!(!diaChi.equals("") && diaChi.matches("[a-zA-Z0-9' ]+"))) {
 			JOptionPane.showMessageDialog(this, "Địa chỉ theo mẫu: [a-zA-Z0-9' ]+");
 			return false;
@@ -135,21 +135,18 @@ public class FrmNhanVien extends JFrame implements ActionListener {
 		if(!(!tuoi.equals("") && tuoi.matches("[0-9]+"))){
 			JOptionPane.showMessageDialog(this, "Tuoi theo theo mẫu: [0-9]+");
 			return false;
+			
 		} else if(Integer.parseInt(tuoi) < 18 || Integer.parseInt(tuoi)>65){
 			JOptionPane.showMessageDialog(this, "Tuoi phai tu 18-65");
 			return false;
 		}
-		if(!(!email.equals("") && email.matches("^[\\\\w-_\\\\.+]*[\\\\w-_\\\\.]\\\\@([\\\\w]+\\\\.)+[\\\\w]+[\\\\w]$"))){
-			JOptionPane.showMessageDialog(this, "Email theo theo mẫu");
-			return false;
-		}
 		
-		if(!(!ten.equals("") && ten.matches("[a-zA-Z' ]+"))){
-		JOptionPane.showMessageDialog(this, "Tên nhân viên theo mẫu: [a-zA-Z' ]+");
-		return false;
-		}
-
-		return true;
+		if(!(!email.equals("") && email.matches("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$"))){
+			JOptionPane.showMessageDialog(this, "Email theo theo mẫu");
+			txtEmail.requestFocus();
+			return false;
+		} else return true;
+		
 	}
 
 	private void clearTextfields() {
@@ -158,8 +155,6 @@ public class FrmNhanVien extends JFrame implements ActionListener {
 		txtDiaChi.setText("");
 		txtTuoi.setText("");
 		txtEmail.setText("");
-	
-		txtMa.setEditable(true);
 		txtMa.requestFocus();
 	}
 }
