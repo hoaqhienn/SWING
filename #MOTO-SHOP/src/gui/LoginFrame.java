@@ -24,7 +24,7 @@ public class LoginFrame extends JFrame implements ActionListener {
     private JPanel pCenter;
 
     public LoginFrame() {
-    	setIconImage(Toolkit.getDefaultToolkit().getImage("E:\\GIT\\SWING\\#MOTO-SHOP\\img\\cogwheel.png"));
+    	setIconImage(Toolkit.getDefaultToolkit().getImage(".\\img\\cogwheel.png"));
         setTitle("QUẢN LÝ CỬA HÀNG XE MÁY - ĐĂNG NHẬP");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(1366, 768);
@@ -46,7 +46,7 @@ public class LoginFrame extends JFrame implements ActionListener {
         pWest.setLayout(new GridLayout(0, 1, 0, 0));
         
         img = new JLabel("");
-        img.setIcon(new ImageIcon("E:\\GIT\\SWING\\#MOTO-SHOP\\img\\avatar.png"));
+        img.setIcon(new ImageIcon(".\\img\\avatar.png"));
         pWest.add(img);
         
         pSouth = new JPanel();
@@ -89,7 +89,7 @@ public class LoginFrame extends JFrame implements ActionListener {
                         cancelButton = new JButton("Hủy bỏ");
                         pCenter.add(cancelButton, "cell 1 2,growx");
                         cancelButton.setBackground(Color.WHITE);
-                        cancelButton.setIcon(new ImageIcon("E:\\GIT\\SWING\\#MOTO-SHOP\\img\\logout.png"));
+                        cancelButton.setIcon(new ImageIcon(".\\img\\logout.png"));
                         cancelButton.setFont(new Font("Tahoma", Font.BOLD, 20));
                         cancelButton.addActionListener(this);
                         loginButton.addActionListener(this);
